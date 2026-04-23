@@ -8,27 +8,39 @@
 
 ---
 
+## 📥 0. 프로젝트 다운로드 방법
+
+1. 오른쪽 상단의 초록색 **[Code]** 버튼을 클릭합니다.
+2. **[Download ZIP]**을 클릭하여 파일을 받습니다.
+3. 받은 압축 파일을 풀고, 해당 폴더를 **VS Code**로 엽니다.
+
+---
+
 ## 🛠️ 1. 준비 단계 (가장 쉬운 환경 구축)
 
-이 문서는 **Windows**와**VS Code**를 기준으로 작성되었습니다.
+이 문서는 **Windows**와 **VS Code**를 기준으로 작성되었습니다.
 
 ### (1) VS Code에서 파이썬 한 번에 세팅하기
-1. 이 프로젝트 폴더를 **VS Code**로 엽니다.
-2. 왼쪽 파일 목록에서 `test.py` 파일을 클릭해 엽니다.
-3. 화면 오른쪽 하단에 **"Do you want to install the recommended 'Python' extension?"**이라는 팝업이 뜨면 **[Install]**을 누릅니다.
-4. 만약 파이썬 자체가 컴퓨터에 깔려 있지 않다면, VS Code가 자동으로 **Microsoft Store**의 파이썬 설치 페이지를 열어줍니다. 거기서 **[다운로드/설치]**만 누르면 모든 준비가 끝납니다.
+1. 왼쪽 파일 목록에서 `test.py` 파일을 클릭해 엽니다.
+2. 화면 오른쪽 하단에 **"Do you want to install the recommended 'Python' extension?"**이라는 팝업이 뜨면 **[Install]**을 누릅니다.
+3. 만약 파이썬 자체가 컴퓨터에 깔려 있지 않다면, VS Code가 자동으로 **Microsoft Store**의 파이썬 설치 페이지를 열어줍니다. 거기서 **[다운로드/설치]**만 누르면 모든 준비가 끝납니다.
 
 ### (2) 가상환경(venv) 만들기 및 활성화
-프로그램들이 서로 충돌하지 않도록 우리만의 전용 방을 만드는 과정입니다. VS Code 하단의 **터미널(Terminal)** 창에 아래 명령어를 입력하세요.
+터미널 창에 아래 명령어를 한 줄씩 복사해서 입력하세요.
 
-```bash
-# 1. 가상환경 만들기
+**Step 1. 가상환경 방 만들기**
+```powershell
 python -m venv venv
+```
 
-# 2. 가상환경 활성화 (성공하면 터미널 줄 맨 앞에 (venv)가 뜹니다)
+**Step 2. 가상환경 활성화 (성공하면 줄 맨 앞에 (venv)가 뜹니다)**
+```powershell
 .\venv\Scripts\activate
+```
 
-# 2-1. (에러 시) 스크립트 실행 권한 허용 후 다시 위 코드 실행
+**🚨 (에러 발생 시) "스크립트를 실행할 수 없다는" 빨간 글씨가 뜬다면?**
+아래 코드를 복사해서 입력한 뒤, 다시 **Step 2**를 실행하세요.
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
@@ -42,11 +54,12 @@ pip install -r requirements.txt
 
 ## 🎬 2. 실행 방법
 
-### (1) 파일 확인
-이 프로젝트는 대용량 영상 파일을 포함하고 있어, 보안 및 속도를 위해 깃허브에는 코드를 제외한 영상/모델 파일이 올라가 있지 않습니다. 아래 링크에서 다운로드하여 **프로젝트 폴더(AI_Project) 안에** 넣어주세요.
+### (1) 필수 파일 다운로드
+이 프로젝트는 대용량 영상 파일을 포함하고 있어 깃허브에 직접 올라와 있지 않습니다. 아래 링크에서 다운로드하여 **프로젝트 폴더(AI_Project) 안에** 넣어주세요.
 
-- **테스트 영상(drivetest.mp4) 다운로드:** (https://drive.google.com/file/d/1ZFBGB9g5wiHgFldVsZuu_g3RAaZ4jdfz/view?usp=sharing)
-- 폴더 안에 `drivetest.mp4` (테스트용 주행 영상) 파일이 있는지 확인하세요.
+- **[테스트 영상(drivetest.mp4) 다운로드 링크]**
+  ([https://drive.google.com/file/d/1ZFBGB9g5wiHgFldVsZuu_g3RAaZ4jdfz/view?usp=sharing](https://drive.google.com/file/d/1ZFBGB9g5wiHgFldVsZuu_g3RAaZ4jdfz/view?usp=sharing))
+- 폴더 안에 `drivetest.mp4` 파일이 있는지 확인하세요.
 - 처음 실행 시 AI 모델(`yolov8n.pt`)을 자동으로 다운로드하므로 잠시 기다려 주세요.
 
 ### (2) 코드 실행
@@ -57,8 +70,6 @@ python test.py
 ---
 
 ## 🕹️ 3. 조작 매뉴얼 (필독!)
-
-프로그램 실행 창이 뜨면 아래 키들을 사용하여 AI 기능을 직접 테스트해 볼 수 있습니다.
 
 | 키 | 기능 | 설명 |
 | :--- | :--- | :--- |
@@ -71,20 +82,18 @@ python test.py
 
 ## 🕵️‍♀️ 4. 조원들과의 테스트 미션
 
-우리 시스템의 성능을 높이기 위해 다음 사항들을 함께 관찰해 주세요!
+프로젝트 협업을 위해 다음 사항들을 함께 관찰해 주세요!
 
 1. **인식 거리:** 자동차가 얼마나 멀리 있을 때부터 인식(빨간 박스)이 시작되나요?
-2. **ROI 설정:** ROI를 조정해보고 실험해보면서 최종적으로 ROI의 크기를 확정해야 합니다.
+2. **ROI 설정:** ROI를 조정해보며 우리 프로젝트에 맞는 최적의 감시 크기를 확정해야 합니다.
 3. **인식 정확도:** 주변의 표지판이나 나무를 차량으로 오해하는 '오탐지'가 발생하나요?
 
 ---
 
 ## 📂 5. 폴더 구조
 
-- `venv/`: 프로젝트 전용 가상환경 폴더 (수정하지 마세요!)
+- `venv/`: 프로젝트 전용 가상환경 폴더 (수정 금지)
 - `test.py`: 통합 AI 객체 탐지 메인 코드
-- `requirements.txt`: 프로젝트 실행에 필요한 라이브러리 목록
+- `requirements.txt`: 라이브러리 설치 목록
 - `drivetest.mp4`: 분석용 도로 주행 데이터
 - `README.md`: 지금 읽고 계신 매뉴얼
-
----
