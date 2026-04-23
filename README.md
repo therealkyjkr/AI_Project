@@ -76,7 +76,7 @@ python test.py
 ## 📂 5. 폴더 구조
 
 - `venv/`: 프로젝트 전용 가상환경 폴더 (수정하지 마세요!)
-- `beep_beep_final.py`: 통합 AI 객체 탐지 메인 코드
+- `test.py`: 통합 AI 객체 탐지 메인 코드
 - `requirements.txt`: 프로젝트 실행에 필요한 라이브러리 목록
 - `drivetest.mp4`: 분석용 도로 주행 데이터
 - `README.md`: 지금 읽고 계신 매뉴얼
