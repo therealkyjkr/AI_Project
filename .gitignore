@@ -2,5 +2,6 @@
 venv/
 *.mp4
 *.pt
+!PM-Tracker.pt
 __pycache__/
 .vscode/
