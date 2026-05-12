@@ -4,7 +4,7 @@
 # ==========================================================
 
 # --- [파일 및 모델 경로] ---
-VIDEO_PATH        = 'test.mp4'        # 분석할 영상 파일
+VIDEO_PATH        = 'walk_test.mp4'        # 분석할 영상 파일
 VEHICLE_MODEL_PT  = 'yolov8n.pt'          # COCO 모델 (차량용)
 SCOOTER_MODEL_PT  = 'PM-Tracker.pt'       # 커스텀 모델 (킥보드용)
 
@@ -36,3 +36,7 @@ COLOR_DANGER    = (0, 0, 255)             # 위험 (빨간색)
 COLOR_CAUTION   = (0, 255, 255)           # 주의 (노란색)
 COLOR_SAFE      = (0, 255, 0)             # 안전 (초록색)
 COLOR_ROI_LINE  = (255, 0, 0)             # ROI 라인 (파란색)
+
+# --- [경고 알림 쿨타임 설정] ---
+DANGER_ALERT_INTERVAL = 0.5   # 위험 상태 알림 간격 (초)
+CAUTION_ALERT_INTERVAL = 1.5  # 주의 상태 알림 간격 (초)
